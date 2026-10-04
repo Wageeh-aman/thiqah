@@ -1,0 +1,3166 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="شركة ثقة للاستشارات المحاسبية والمالية - ثقة في الأرقام.. شراكة في النجاح. خدمات محاسبية واستشارية متكاملة للشركات والمنشآت في المملكة العربية السعودية.">
+  <title>ثقة | للاستشارات المحاسبية والمالية</title>
+  <link rel="icon" type="image/svg+xml" href="images/logo-icon.svg">
+  
+  <!-- Fonts: Alexandria & IBM Plex Sans Arabic -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@300;400;500;600;700&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* ==========================================
+       DESIGN SYSTEM & CSS VARIABLES
+       ========================================== */
+    :root {
+      /* Brand Color Palette */
+      --bg-primary: #F8F7F3;        /* Soft Ivory White (Main Background) */
+      --bg-alt: #F0EFEB;            /* Warm Light Gray (Section Separator) */
+      --bg-dark: #14243A;           /* Deep Night Blue */
+      --bg-card: #FFFFFF;           /* Card Background */
+      --bg-card-alt: #FBFBFA;
+
+      --color-primary: #14243A;      /* Deep Night Blue Text/Headings */
+      --color-secondary: #777A80;    /* Muted Slate Body Text */
+      --color-gold: #B7A078;         /* Subtle Muted Gold Accents */
+      --color-gold-hover: #9E8761;   /* Deeper Gold on Hover */
+      --color-gold-light: rgba(183, 160, 120, 0.08);
+      --color-gold-border: rgba(183, 160, 120, 0.25);
+      --color-white: #FFFFFF;
+      --color-border: rgba(20, 36, 58, 0.08);
+      --color-border-dark: rgba(248, 247, 243, 0.12);
+
+      /* Typography */
+      --font-heading: 'Alexandria', -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-body: 'IBM Plex Sans Arabic', 'Alexandria', sans-serif;
+
+      /* Transitions & Elevations */
+      --transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      --transition-slow: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+      --shadow-subtle: 0 4px 25px rgba(20, 36, 58, 0.03);
+      --shadow-hover: 0 12px 35px rgba(20, 36, 58, 0.07);
+      --shadow-dark: 0 20px 40px rgba(0, 0, 0, 0.2);
+
+      /* Geometry & Radius */
+      --radius-sm: 4px;
+      --radius-md: 6px;
+      --radius-lg: 10px;
+
+      /* Layout */
+      --container-max: 1240px;
+      --header-height: 85px;
+    }
+
+    /* Reset & Base Styles */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+      -webkit-text-size-adjust: 100%;
+    }
+
+    body {
+      font-family: var(--font-body);
+      background-color: var(--bg-primary);
+      color: var(--color-secondary);
+      line-height: 1.8;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      font-family: var(--font-heading);
+      color: var(--color-primary);
+      font-weight: 600;
+      line-height: 1.35;
+      letter-spacing: -0.01em;
+    }
+
+    p {
+      margin-bottom: 1rem;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+      transition: var(--transition);
+    }
+
+    button, input, select, textarea {
+      font-family: inherit;
+      font-size: inherit;
+      outline: none;
+      border: none;
+    }
+
+    button {
+      cursor: pointer;
+      background: none;
+    }
+
+    img, svg {
+      display: block;
+      max-width: 100%;
+    }
+
+    .container {
+      width: 100%;
+      max-width: var(--container-max);
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    /* ==========================================
+       TYPOGRAPHY & ACCENT UTILITIES
+       ========================================== */
+    .section-subtitle {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-family: var(--font-heading);
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--color-gold);
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      margin-bottom: 0.8rem;
+    }
+
+    .section-subtitle::before {
+      content: '';
+      display: block;
+      width: 18px;
+      height: 1px;
+      background-color: var(--color-gold);
+    }
+
+    .section-title {
+      font-size: 2.25rem;
+      color: var(--color-primary);
+      margin-bottom: 1.25rem;
+      font-weight: 600;
+    }
+
+    .section-desc {
+      font-size: 1.1rem;
+      color: var(--color-secondary);
+      max-width: 680px;
+      font-weight: 300;
+      line-height: 1.85;
+    }
+
+    .text-center { text-align: center; }
+    .mx-auto { margin-left: auto; margin-right: auto; }
+
+    /* Buttons */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.6rem;
+      padding: 0.85rem 1.8rem;
+      font-family: var(--font-heading);
+      font-size: 0.92rem;
+      font-weight: 500;
+      border-radius: var(--radius-sm);
+      transition: var(--transition);
+      position: relative;
+      white-space: nowrap;
+    }
+
+    .btn-primary {
+      background-color: var(--color-primary);
+      color: var(--bg-primary);
+      border: 1px solid var(--color-primary);
+    }
+
+    .btn-primary:hover {
+      background-color: #1c324f;
+      border-color: #1c324f;
+      color: #ffffff;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(20, 36, 58, 0.15);
+    }
+
+    .btn-secondary {
+      background-color: transparent;
+      color: var(--color-primary);
+      border: 1px solid rgba(20, 36, 58, 0.25);
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--color-primary);
+      background-color: rgba(20, 36, 58, 0.03);
+      transform: translateY(-2px);
+    }
+
+    .btn-gold {
+      background-color: var(--color-gold);
+      color: var(--color-white);
+      border: 1px solid var(--color-gold);
+    }
+
+    .btn-gold:hover {
+      background-color: var(--color-gold-hover);
+      border-color: var(--color-gold-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(183, 160, 120, 0.25);
+    }
+
+    .btn-outline-gold {
+      background-color: transparent;
+      color: var(--color-gold);
+      border: 1px solid var(--color-gold-border);
+    }
+
+    .btn-outline-gold:hover {
+      background-color: var(--color-gold-light);
+      border-color: var(--color-gold);
+      color: var(--color-gold);
+    }
+
+    /* ==========================================
+       HEADER & NAVIGATION
+       ========================================== */
+    .header {
+      position: fixed;
+      top: 0;
+      right: 0;
+      left: 0;
+      height: var(--header-height);
+      background-color: rgba(248, 247, 243, 0.94);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      z-index: 1000;
+      border-bottom: 1px solid var(--color-border);
+      transition: var(--transition);
+    }
+
+    .header.scrolled {
+      height: 72px;
+      box-shadow: 0 4px 20px rgba(20, 36, 58, 0.04);
+      background-color: rgba(248, 247, 243, 0.98);
+    }
+
+    .nav-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 100%;
+    }
+
+    /* Logo Styling */
+    .brand-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+      text-decoration: none;
+    }
+
+    .brand-logo-img {
+      height: 54px;
+      width: auto;
+      max-width: 240px;
+      object-fit: contain;
+      transition: var(--transition);
+    }
+
+    .footer-logo-img {
+      height: 60px;
+      width: auto;
+      max-width: 260px;
+      object-fit: contain;
+    }
+
+    .logo-emblem {
+      width: 42px;
+      height: 42px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: var(--color-primary);
+      border-radius: var(--radius-sm);
+      position: relative;
+    }
+
+    .logo-emblem svg {
+      width: 24px;
+      height: 24px;
+      fill: none;
+      stroke: var(--color-gold);
+      stroke-width: 1.6;
+    }
+
+    .logo-text {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .logo-name {
+      font-family: var(--font-heading);
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--color-primary);
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+    }
+
+    .logo-tagline {
+      font-size: 0.7rem;
+      color: var(--color-gold);
+      font-weight: 500;
+      letter-spacing: 0.02em;
+    }
+
+    /* Navigation Links */
+    .nav-menu {
+      display: flex;
+      align-items: center;
+      gap: 2.2rem;
+      list-style: none;
+    }
+
+    .nav-link {
+      font-family: var(--font-heading);
+      font-size: 0.92rem;
+      font-weight: 400;
+      color: var(--color-primary);
+      position: relative;
+      padding: 0.4rem 0;
+    }
+
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 0;
+      height: 1.5px;
+      background-color: var(--color-gold);
+      transition: var(--transition);
+    }
+
+    .nav-link:hover,
+    .nav-link.active {
+      color: var(--color-primary);
+      font-weight: 500;
+    }
+
+    .nav-link:hover::after,
+    .nav-link.active::after {
+      width: 100%;
+      left: 0;
+    }
+
+    .nav-cta {
+      display: flex;
+      align-items: center;
+    }
+
+    /* Mobile Hamburger */
+    .mobile-toggle {
+      display: none;
+      width: 40px;
+      height: 40px;
+      align-items: center;
+      justify-content: center;
+      color: var(--color-primary);
+      cursor: pointer;
+    }
+
+    .mobile-toggle svg {
+      width: 26px;
+      height: 26px;
+      stroke: var(--color-primary);
+      stroke-width: 1.8;
+    }
+
+    /* ==========================================
+       SECTION: HERO SECTION
+       ========================================== */
+    .hero-section {
+      padding-top: calc(var(--header-height) + 4rem);
+      padding-bottom: 5rem;
+      min-height: 90vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      position: relative;
+      background-color: var(--bg-primary);
+      overflow: hidden;
+    }
+
+    /* Subtle Architectural Background Lines */
+    .hero-bg-lines {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-image: 
+        linear-gradient(to right, rgba(20, 36, 58, 0.025) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(20, 36, 58, 0.025) 1px, transparent 1px);
+      background-size: 80px 80px;
+      pointer-events: none;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 3.5rem;
+      align-items: center;
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-content {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.4rem 1rem;
+      background-color: rgba(183, 160, 120, 0.09);
+      border: 1px solid var(--color-gold-border);
+      border-radius: 40px;
+      font-size: 0.82rem;
+      color: var(--color-primary);
+      font-weight: 500;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-badge span.dot {
+      width: 6px;
+      height: 6px;
+      background-color: var(--color-gold);
+      border-radius: 50%;
+    }
+
+    .hero-title {
+      font-size: 2.85rem;
+      font-weight: 700;
+      color: var(--color-primary);
+      line-height: 1.3;
+      margin-bottom: 1.5rem;
+      letter-spacing: -0.02em;
+    }
+
+    .hero-title span.highlight {
+      color: var(--color-primary);
+      position: relative;
+      display: inline-block;
+    }
+
+    .hero-title span.highlight::after {
+      content: '';
+      position: absolute;
+      bottom: 6px;
+      right: 0;
+      left: 0;
+      height: 6px;
+      background-color: rgba(183, 160, 120, 0.22);
+      z-index: -1;
+    }
+
+    .hero-desc {
+      font-size: 1.15rem;
+      color: var(--color-secondary);
+      margin-bottom: 1.25rem;
+      font-weight: 300;
+      line-height: 1.85;
+      max-width: 580px;
+    }
+
+    .hero-subnote {
+      font-size: 0.92rem;
+      color: var(--color-gold);
+      font-weight: 500;
+      margin-bottom: 2.2rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+      flex-wrap: wrap;
+    }
+
+    /* Abstract Visual Component (Enhanced Professional & Simple Logo Showcase) */
+    .hero-visual-wrapper {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .hero-visual-container {
+      width: 100%;
+      max-width: 480px;
+      height: 480px;
+      background: linear-gradient(135deg, rgba(250, 248, 244, 0.88) 0%, rgba(240, 239, 235, 0.94) 100%), url('images/hero_logo_bg.png') center/cover no-repeat;
+      border: 1px solid rgba(183, 160, 120, 0.38);
+      border-radius: 24px;
+      box-shadow: 0 20px 45px rgba(20, 36, 58, 0.08), 0 2px 12px rgba(183, 160, 120, 0.12);
+      position: relative;
+      padding: 2.5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    /* Ambient Background Glows */
+    .hero-visual-glow-1 {
+      position: absolute;
+      top: -40px;
+      right: -40px;
+      width: 240px;
+      height: 240px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(183, 160, 120, 0.25) 0%, rgba(183, 160, 120, 0) 70%);
+      pointer-events: none;
+    }
+
+    .hero-visual-glow-2 {
+      position: absolute;
+      bottom: -40px;
+      left: -40px;
+      width: 250px;
+      height: 250px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(20, 36, 58, 0.12) 0%, rgba(20, 36, 58, 0) 70%);
+      pointer-events: none;
+    }
+
+    /* Geometric Architectural Pattern overlay */
+    .hero-visual-pattern {
+      position: absolute;
+      inset: 0;
+      background-image: 
+        radial-gradient(circle at 1px 1px, rgba(20, 36, 58, 0.06) 1px, transparent 0);
+      background-size: 24px 24px;
+      opacity: 0.85;
+      pointer-events: none;
+    }
+
+    /* Floating Badges */
+    .hero-badge-float {
+      position: absolute;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid rgba(183, 160, 120, 0.35);
+      padding: 0.45rem 0.95rem;
+      border-radius: 30px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--color-primary);
+      box-shadow: 0 8px 22px rgba(20, 36, 58, 0.07);
+      z-index: 3;
+      transition: var(--transition);
+    }
+
+    .hero-badge-float:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 28px rgba(20, 36, 58, 0.12);
+    }
+
+    .hero-badge-float.top-right {
+      top: 24px;
+      right: 24px;
+    }
+
+    .hero-badge-float.bottom-left {
+      bottom: 24px;
+      left: 24px;
+    }
+
+    .hero-badge-icon {
+      width: 16px;
+      height: 16px;
+      color: var(--color-gold);
+    }
+
+    /* Main Logo Card */
+    .hero-logo-card {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      max-width: 330px;
+      padding: 2.2rem 1.8rem;
+      background: rgba(255, 255, 255, 0.96);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-radius: 18px;
+      border: 1px solid rgba(183, 160, 120, 0.38);
+      box-shadow: 0 25px 50px rgba(20, 36, 58, 0.09), 0 4px 15px rgba(183, 160, 120, 0.15);
+      text-align: center;
+      transition: var(--transition);
+    }
+
+    .hero-logo-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 30px 60px rgba(20, 36, 58, 0.13), 0 6px 20px rgba(183, 160, 120, 0.22);
+    }
+
+    .hero-logo-card img {
+      width: 100%;
+      height: auto;
+      max-width: 250px;
+      margin: 0 auto;
+      display: block;
+    }
+
+    .hero-footer-bar {
+      margin-top: 4rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--color-border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-footer-tagline {
+      font-family: var(--font-heading);
+      font-size: 0.95rem;
+      color: var(--color-primary);
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .hero-footer-tagline::before {
+      content: '';
+      display: inline-block;
+      width: 24px;
+      height: 1px;
+      background-color: var(--color-gold);
+    }
+
+    /* ==========================================
+       SECTION: ABOUT US (من نحن)
+       ========================================== */
+    .about-section {
+      padding: 6rem 0;
+      background-color: var(--bg-primary);
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .about-card {
+      background-color: var(--bg-card);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-md);
+      padding: 3rem;
+      box-shadow: var(--shadow-subtle);
+      position: relative;
+    }
+
+    .about-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 4px;
+      height: 100%;
+      background-color: var(--color-gold);
+      border-radius: 0 var(--radius-md) var(--radius-md) 0;
+    }
+
+    .about-quote {
+      font-family: var(--font-heading);
+      font-size: 1.4rem;
+      font-weight: 600;
+      color: var(--color-primary);
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
+    }
+
+    .about-text {
+      font-size: 1.05rem;
+      line-height: 1.9;
+      color: var(--color-secondary);
+      margin-bottom: 1.5rem;
+      font-weight: 300;
+    }
+
+    .about-highlight-box {
+      margin-top: 2rem;
+      padding: 1.5rem;
+      background-color: var(--bg-alt);
+      border-radius: var(--radius-sm);
+      border-right: 3px solid var(--color-primary);
+    }
+
+    .about-highlight-text {
+      font-family: var(--font-heading);
+      font-size: 1.05rem;
+      color: var(--color-primary);
+      font-weight: 600;
+      margin: 0;
+    }
+
+    /* ==========================================
+       SECTION: VISION, MISSION, VALUES (الرؤية والرسالة والقيم)
+       ========================================== */
+    .vmv-section {
+      padding: 6rem 0;
+      background-color: var(--bg-alt);
+    }
+
+    .vmv-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      margin-top: 3.5rem;
+    }
+
+    .vmv-card {
+      background-color: var(--bg-card);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-md);
+      padding: 2.5rem 2rem;
+      transition: var(--transition);
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+
+    .vmv-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-hover);
+      border-color: rgba(183, 160, 120, 0.4);
+    }
+
+    .vmv-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: var(--radius-sm);
+      background-color: rgba(20, 36, 58, 0.04);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.5rem;
+      color: var(--color-primary);
+      transition: var(--transition);
+    }
+
+    .vmv-card:hover .vmv-icon {
+      background-color: var(--color-primary);
+      color: var(--color-gold);
+    }
+
+    .vmv-icon svg {
+      width: 24px;
+      height: 24px;
+      stroke: currentColor;
+      stroke-width: 1.7;
+      fill: none;
+    }
+
+    .vmv-title {
+      font-size: 1.3rem;
+      color: var(--color-primary);
+      margin-bottom: 1rem;
+      font-weight: 600;
+    }
+
+    .vmv-body {
+      font-size: 0.98rem;
+      color: var(--color-secondary);
+      line-height: 1.85;
+      font-weight: 300;
+    }
+
+    .values-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+    }
+
+    .values-item {
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+      font-size: 0.96rem;
+      color: var(--color-primary);
+      font-weight: 500;
+    }
+
+    .values-item svg {
+      width: 16px;
+      height: 16px;
+      stroke: var(--color-gold);
+      stroke-width: 2;
+      fill: none;
+      flex-shrink: 0;
+    }
+
+    /* ==========================================
+       SECTION: SERVICES Grid & Interactive Filter (خدماتنا)
+       ========================================== */
+    .services-section {
+      padding: 6.5rem 0;
+      background-color: var(--bg-primary);
+    }
+
+    .services-filter {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.8rem;
+      flex-wrap: wrap;
+      margin-top: 2.5rem;
+      margin-bottom: 3.5rem;
+    }
+
+    .filter-btn {
+      padding: 0.6rem 1.4rem;
+      font-family: var(--font-heading);
+      font-size: 0.88rem;
+      color: var(--color-secondary);
+      background-color: transparent;
+      border: 1px solid var(--color-border);
+      border-radius: 30px;
+      transition: var(--transition);
+      cursor: pointer;
+    }
+
+    .filter-btn:hover,
+    .filter-btn.active {
+      color: var(--color-primary);
+      border-color: var(--color-primary);
+      background-color: rgba(20, 36, 58, 0.04);
+      font-weight: 500;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+      gap: 1.8rem;
+    }
+
+    .service-card {
+      background-color: var(--bg-card);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-md);
+      padding: 2.2rem;
+      transition: var(--transition);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+      height: 100%;
+    }
+
+    .service-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-hover);
+      border-color: rgba(183, 160, 120, 0.4);
+    }
+
+    .service-header {
+      display: flex;
+      align-items: flex-start;
+      gap: 1.25rem;
+      margin-bottom: 1.2rem;
+    }
+
+    .service-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: var(--radius-sm);
+      background-color: rgba(183, 160, 120, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--color-primary);
+      flex-shrink: 0;
+    }
+
+    .service-icon svg {
+      width: 22px;
+      height: 22px;
+      stroke: var(--color-primary);
+      stroke-width: 1.6;
+      fill: none;
+    }
+
+    .service-name {
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: var(--color-primary);
+      line-height: 1.4;
+      margin-top: 0.2rem;
+    }
+
+    .service-desc {
+      font-size: 0.94rem;
+      color: var(--color-secondary);
+      line-height: 1.8;
+      font-weight: 300;
+      margin-bottom: 1.5rem;
+    }
+
+    .service-footer {
+      margin-top: auto;
+      padding-top: 1rem;
+      border-top: 1px solid rgba(20, 36, 58, 0.05);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .service-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-family: var(--font-heading);
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--color-gold);
+      cursor: pointer;
+    }
+
+    .service-link svg {
+      width: 14px;
+      height: 14px;
+      stroke: currentColor;
+      stroke-width: 2;
+      fill: none;
+      transition: var(--transition);
+      transform: scaleX(-1); /* RTL flip */
+    }
+
+    .service-card:hover .service-link svg {
+      transform: scaleX(-1) translateX(4px);
+    }
+
+    .services-bottom-tagline {
+      margin-top: 4rem;
+      text-align: center;
+      padding: 1.8rem;
+      background-color: var(--bg-alt);
+      border-radius: var(--radius-md);
+      font-family: var(--font-heading);
+      font-size: 1.1rem;
+      color: var(--color-primary);
+      font-weight: 500;
+      border: 1px solid var(--color-border);
+    }
+
+    /* ==========================================
+       SECTION: TEAM EXPERTISE / SPECIALTIES (فريق العمل)
+       ========================================== */
+    .team-section {
+      padding: 6rem 0;
+      background-color: var(--bg-alt);
+    }
+
+    .team-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .specialties-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+
+    .specialty-item {
+      background-color: var(--bg-card);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-sm);
+      padding: 1.2rem 1.6rem;
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+      transition: var(--transition);
+    }
+
+    .specialty-item:hover {
+      border-color: var(--color-gold-border);
+      transform: translateX(-5px);
+      box-shadow: var(--shadow-subtle);
+    }
+
+    .specialty-number {
+      font-family: var(--font-heading);
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--color-gold);
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background-color: rgba(183, 160, 120, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .specialty-title {
+      font-family: var(--font-heading);
+      font-size: 1.05rem;
+      font-weight: 500;
+      color: var(--color-primary);
+    }
+
+    .team-image-box {
+      background-color: var(--color-primary);
+      border-radius: var(--radius-md);
+      padding: 3.5rem 3rem;
+      color: var(--bg-primary);
+      position: relative;
+      overflow: hidden;
+      box-shadow: var(--shadow-hover);
+    }
+
+    .team-image-box::before {
+      content: '';
+      position: absolute;
+      top: -50px;
+      left: -50px;
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(183, 160, 120, 0.15) 0%, transparent 70%);
+    }
+
+    .team-box-title {
+      font-size: 1.6rem;
+      color: #ffffff;
+      margin-bottom: 1.2rem;
+      font-weight: 600;
+    }
+
+    .team-box-desc {
+      font-size: 1.02rem;
+      color: rgba(248, 247, 243, 0.8);
+      line-height: 1.85;
+      font-weight: 300;
+      margin-bottom: 2rem;
+    }
+
+    /* ==========================================
+       SECTION: WHY CHOOSE THIQA (لماذا تختار ثقة؟)
+       ========================================== */
+    .why-section {
+      padding: 7rem 0;
+      background-color: var(--bg-dark);
+      color: var(--bg-primary);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .why-bg-pattern {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background-image: radial-gradient(rgba(183, 160, 120, 0.08) 1px, transparent 1px);
+      background-size: 40px 40px;
+      pointer-events: none;
+    }
+
+    .why-section .section-title {
+      color: #ffffff;
+    }
+
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2.2rem;
+      margin-top: 4rem;
+      position: relative;
+      z-index: 2;
+    }
+
+    .why-card {
+      background-color: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--color-border-dark);
+      border-radius: var(--radius-md);
+      padding: 2.2rem 1.8rem;
+      transition: var(--transition);
+    }
+
+    .why-card:hover {
+      background-color: rgba(255, 255, 255, 0.06);
+      border-color: rgba(183, 160, 120, 0.35);
+      transform: translateY(-4px);
+    }
+
+    .why-number {
+      font-family: var(--font-heading);
+      font-size: 1.8rem;
+      font-weight: 300;
+      color: var(--color-gold);
+      margin-bottom: 1rem;
+      opacity: 0.9;
+    }
+
+    .why-card-title {
+      font-size: 1.2rem;
+      color: #ffffff;
+      margin-bottom: 0.8rem;
+      font-weight: 500;
+    }
+
+    .why-card-desc {
+      font-size: 0.95rem;
+      color: rgba(248, 247, 243, 0.72);
+      line-height: 1.8;
+      font-weight: 300;
+    }
+
+    .why-footer-banner {
+      margin-top: 4.5rem;
+      text-align: center;
+      padding-top: 2.5rem;
+      border-top: 1px solid var(--color-border-dark);
+      position: relative;
+      z-index: 2;
+    }
+
+    .why-footer-text {
+      font-family: var(--font-heading);
+      font-size: 1.35rem;
+      font-weight: 500;
+      color: var(--color-gold);
+    }
+
+    /* ==========================================
+       SECTION: ADDITIONAL SERVICES (الخدمات الإضافية)
+       ========================================== */
+    .additional-section {
+      padding: 6rem 0;
+      background-color: var(--bg-primary);
+    }
+
+    .additional-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 1.25rem;
+      margin-top: 3.5rem;
+    }
+
+    .additional-card {
+      background-color: var(--bg-card);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-sm);
+      padding: 1.8rem 1.25rem;
+      text-align: center;
+      transition: var(--transition);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 160px;
+    }
+
+    .additional-card:hover {
+      border-color: var(--color-gold);
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-hover);
+    }
+
+    .additional-icon {
+      width: 36px;
+      height: 36px;
+      color: var(--color-gold);
+      margin-bottom: 1rem;
+    }
+
+    .additional-icon svg {
+      width: 100%;
+      height: 100%;
+      stroke: currentColor;
+      stroke-width: 1.6;
+      fill: none;
+    }
+
+    .additional-title {
+      font-family: var(--font-heading);
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: var(--color-primary);
+      line-height: 1.5;
+    }
+
+    /* ==========================================
+       SECTION: CALL TO ACTION (دعوة للتواصل)
+       ========================================== */
+    .cta-section {
+      padding: 5.5rem 0;
+      background-color: var(--bg-alt);
+      border-top: 1px solid var(--color-border);
+      border-bottom: 1px solid var(--color-border);
+    }
+
+    .cta-box {
+      background-color: var(--bg-card);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      padding: 4rem 3rem;
+      text-align: center;
+      max-width: 920px;
+      margin: 0 auto;
+      box-shadow: var(--shadow-subtle);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta-box::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      left: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--color-primary), var(--color-gold), var(--color-primary));
+    }
+
+    .cta-title {
+      font-size: 2.2rem;
+      color: var(--color-primary);
+      margin-bottom: 1.25rem;
+      font-weight: 600;
+    }
+
+    .cta-desc {
+      font-size: 1.1rem;
+      color: var(--color-secondary);
+      max-width: 650px;
+      margin: 0 auto 2.5rem;
+      font-weight: 300;
+      line-height: 1.85;
+    }
+
+    .cta-actions {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1.25rem;
+      flex-wrap: wrap;
+    }
+
+    /* ==========================================
+       SECTION: CONTACT US (تواصل معنا)
+       ========================================== */
+    .contact-section {
+      padding: 6.5rem 0;
+      background-color: var(--bg-primary);
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 0.85fr 1.15fr;
+      gap: 4rem;
+      margin-top: 3.5rem;
+    }
+
+    .contact-info {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    .contact-card-info {
+      background-color: var(--bg-card);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-md);
+      padding: 2.5rem;
+      box-shadow: var(--shadow-subtle);
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 1.25rem;
+      margin-bottom: 1.8rem;
+    }
+
+    .contact-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .contact-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: var(--radius-sm);
+      background-color: rgba(20, 36, 58, 0.04);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--color-primary);
+      flex-shrink: 0;
+    }
+
+    .contact-icon svg {
+      width: 20px;
+      height: 20px;
+      stroke: var(--color-primary);
+      stroke-width: 1.6;
+      fill: none;
+    }
+
+    .contact-details {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .contact-label {
+      font-size: 0.82rem;
+      color: var(--color-secondary);
+      font-weight: 400;
+      margin-bottom: 0.2rem;
+    }
+
+    .contact-value {
+      font-family: var(--font-heading);
+      font-size: 1.05rem;
+      font-weight: 500;
+      color: var(--color-primary);
+      direction: ltr;
+      text-align: right;
+    }
+
+    /* Form Styles */
+    .contact-form-container {
+      background-color: var(--bg-card);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-md);
+      padding: 3rem;
+      box-shadow: var(--shadow-subtle);
+    }
+
+    .form-title {
+      font-size: 1.4rem;
+      color: var(--color-primary);
+      margin-bottom: 1.8rem;
+      font-weight: 600;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.25rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .form-label {
+      font-family: var(--font-heading);
+      font-size: 0.88rem;
+      font-weight: 500;
+      color: var(--color-primary);
+    }
+
+    .form-input,
+    .form-select,
+    .form-textarea {
+      width: 100%;
+      padding: 0.85rem 1.1rem;
+      background-color: var(--bg-primary);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-sm);
+      font-family: var(--font-body);
+      font-size: 0.95rem;
+      color: var(--color-primary);
+      transition: var(--transition);
+    }
+
+    .form-input:focus,
+    .form-select:focus,
+    .form-textarea:focus {
+      background-color: #ffffff;
+      border-color: var(--color-primary);
+      box-shadow: 0 0 0 3px rgba(20, 36, 58, 0.06);
+    }
+
+    .form-textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+
+    /* ==========================================
+       SECTION: FOOTER (التذييل)
+       ========================================== */
+    .footer {
+      background-color: var(--bg-dark);
+      color: var(--bg-primary);
+      padding-top: 5rem;
+      padding-bottom: 2.5rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr 1.2fr;
+      gap: 3rem;
+      margin-bottom: 4rem;
+    }
+
+    .footer-brand .logo-name {
+      color: #ffffff;
+    }
+
+    .footer-slogan {
+      font-size: 0.95rem;
+      color: var(--color-gold);
+      margin-top: 1.2rem;
+      font-weight: 400;
+    }
+
+    .footer-desc {
+      font-size: 0.9rem;
+      color: rgba(248, 247, 243, 0.65);
+      line-height: 1.8;
+      margin-top: 1rem;
+      font-weight: 300;
+    }
+
+    .footer-heading {
+      font-family: var(--font-heading);
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: #ffffff;
+      margin-bottom: 1.5rem;
+      position: relative;
+      padding-bottom: 0.6rem;
+    }
+
+    .footer-heading::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 24px;
+      height: 1px;
+      background-color: var(--color-gold);
+    }
+
+    .footer-links {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+    }
+
+    .footer-links a {
+      font-size: 0.92rem;
+      color: rgba(248, 247, 243, 0.75);
+      transition: var(--transition);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .footer-links a:hover {
+      color: var(--color-gold);
+      transform: translateX(-4px);
+    }
+
+    .footer-contact-item {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-size: 0.9rem;
+      color: rgba(248, 247, 243, 0.75);
+      margin-bottom: 0.9rem;
+    }
+
+    .footer-contact-item svg {
+      width: 16px;
+      height: 16px;
+      stroke: var(--color-gold);
+      stroke-width: 1.8;
+      fill: none;
+      flex-shrink: 0;
+    }
+
+    .footer-bottom {
+      padding-top: 2rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 0.88rem;
+      color: rgba(248, 247, 243, 0.55);
+    }
+
+    /* ==========================================
+       MODAL SYSTEM (Service Details & Inquiry)
+       ========================================== */
+    .modal-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(20, 36, 58, 0.6);
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      z-index: 2000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+      opacity: 0;
+      visibility: hidden;
+      transition: var(--transition);
+    }
+
+    .modal-overlay.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .modal-container {
+      background-color: var(--bg-card);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      width: 100%;
+      max-width: 650px;
+      max-height: 90vh;
+      overflow-y: auto;
+      padding: 2.5rem;
+      position: relative;
+      box-shadow: var(--shadow-dark);
+      transform: translateY(20px) scale(0.98);
+      transition: var(--transition);
+    }
+
+    .modal-overlay.active .modal-container {
+      transform: translateY(0) scale(1);
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 1.5rem;
+      left: 1.5rem;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background-color: var(--bg-alt);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--color-primary);
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .modal-close:hover {
+      background-color: var(--color-primary);
+      color: #ffffff;
+    }
+
+    .modal-close svg {
+      width: 18px;
+      height: 18px;
+      stroke: currentColor;
+      stroke-width: 2;
+    }
+
+    .modal-header {
+      margin-bottom: 1.5rem;
+    }
+
+    .modal-service-badge {
+      display: inline-block;
+      padding: 0.3rem 0.8rem;
+      background-color: rgba(183, 160, 120, 0.1);
+      color: var(--color-gold);
+      font-size: 0.8rem;
+      font-weight: 500;
+      border-radius: 20px;
+      margin-bottom: 0.8rem;
+    }
+
+    .modal-title {
+      font-size: 1.6rem;
+      color: var(--color-primary);
+      font-weight: 600;
+    }
+
+    .modal-body {
+      color: var(--color-secondary);
+      font-size: 1rem;
+      line-height: 1.85;
+      margin-bottom: 2rem;
+    }
+
+    .modal-features-list {
+      margin-top: 1.2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+    }
+
+    .modal-feature-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      font-size: 0.95rem;
+      color: var(--color-primary);
+    }
+
+    .modal-feature-item svg {
+      width: 18px;
+      height: 18px;
+      stroke: var(--color-gold);
+      stroke-width: 2;
+      fill: none;
+      margin-top: 0.2rem;
+      flex-shrink: 0;
+    }
+
+    /* Notification Toast */
+    .toast-notification {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      background-color: var(--bg-dark);
+      color: #ffffff;
+      padding: 1.2rem 1.8rem;
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-dark);
+      border-right: 4px solid var(--color-gold);
+      z-index: 3000;
+      transform: translateY(100px);
+      opacity: 0;
+      transition: var(--transition);
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      font-family: var(--font-heading);
+      font-size: 0.95rem;
+    }
+
+    .toast-notification.show {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    /* ==========================================
+       RESPONSIVE DESIGN (MEDIA QUERIES)
+       ========================================== */
+    @media (max-width: 1024px) {
+      .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+      }
+
+      .hero-visual-container {
+        max-width: 100%;
+        height: 380px;
+      }
+
+      .about-grid, .team-grid, .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+      }
+
+      .vmv-grid, .why-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .additional-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 2.5rem;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .header {
+        height: 70px;
+      }
+
+      .nav-menu {
+        position: fixed;
+        top: 70px;
+        right: -100%;
+        width: 80%;
+        max-width: 320px;
+        height: calc(100vh - 70px);
+        background-color: var(--bg-primary);
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 2.5rem 2rem;
+        border-left: 1px solid var(--color-border);
+        box-shadow: var(--shadow-dark);
+        transition: var(--transition);
+      }
+
+      .nav-menu.open {
+        right: 0;
+      }
+
+      .mobile-toggle {
+        display: flex;
+      }
+
+      .hero-title {
+        font-size: 2.1rem;
+      }
+
+      .section-title {
+        font-size: 1.85rem;
+      }
+
+      .vmv-grid, .why-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .additional-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .services-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+
+      .cta-box {
+        padding: 2.5rem 1.5rem;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .additional-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-actions {
+        width: 100%;
+        flex-direction: column;
+      }
+
+      .hero-actions .btn {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ==========================================
+       HEADER / NAVBAR
+       ========================================== -->
+  <header class="header" id="header">
+    <div class="container nav-container">
+      
+      <!-- Brand Logo -->
+      <a href="#hero" class="brand-logo" aria-label="شركة ثقة للاستشارات المحاسبية والمالية">
+        <img src="images/logo.svg" alt="شركة ثقة للاستشارات المحاسبية والمالية" class="brand-logo-img">
+      </a>
+
+      <!-- Navigation Links -->
+      <nav>
+        <ul class="nav-menu" id="navMenu">
+          <li><a href="#hero" class="nav-link active">الرئيسية</a></li>
+          <li><a href="#about" class="nav-link">من نحن</a></li>
+          <li><a href="#services" class="nav-link">خدماتنا</a></li>
+          <li><a href="#team" class="nav-link">فريق العمل</a></li>
+          <li><a href="#contact" class="nav-link">تواصل معنا</a></li>
+        </ul>
+      </nav>
+
+      <!-- CTA Button & Mobile Toggle -->
+      <div class="nav-cta">
+        <button class="btn btn-primary" onclick="openConsultationModal()">اطلب استشارتك</button>
+        <button class="mobile-toggle" id="mobileToggle" aria-label="فتح القائمة">
+          <svg viewBox="0 0 24 24" id="toggleIcon">
+            <path d="M4 7h16M4 12h16M4 17h16" stroke-linecap="round"/>
+          </svg>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- ==========================================
+       SECTION 1: HERO SECTION
+       ========================================== -->
+  <section class="hero-section" id="hero">
+    <div class="hero-bg-lines"></div>
+    <div class="container">
+      <div class="hero-grid">
+        
+        <!-- Right Content -->
+        <div class="hero-content">
+          <div class="hero-badge">
+            <span class="dot"></span>
+            <span>استشارات مالية ومحاسبية متكاملة</span>
+          </div>
+
+          <h1 class="hero-title">
+            ثقة.. لأن نجاح أعمالك يبدأ من <span class="highlight">قرارات مالية دقيقة.</span>
+          </h1>
+
+          <p class="hero-desc">
+            نمنح أعمالك رؤية مالية أوضح، وإدارة أكثر كفاءة، وحلولًا محاسبية واستشارية تساعدك على التركيز على ما هو أهم: نمو أعمالك.
+          </p>
+
+          <div class="hero-subnote">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+              <polyline points="22 4 12 14.01 9 11.01"/>
+            </svg>
+            <span>شريكك في إدارة أعمالك المالية.. من التفاصيل اليومية إلى القرارات الاستراتيجية.</span>
+          </div>
+
+          <div class="hero-actions">
+            <a href="#services" class="btn btn-primary">
+              <span>اكتشف خدماتنا</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+            <button class="btn btn-secondary" onclick="openConsultationModal()">
+              <span>تحدث مع مستشارينا</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Left Visual Component (Luxury Logo Showcase) -->
+        <div class="hero-visual-wrapper">
+          <div class="hero-visual-container">
+            <!-- Ambient Glows & Geometric Architectural Pattern -->
+            <div class="hero-visual-glow-1"></div>
+            <div class="hero-visual-glow-2"></div>
+            <div class="hero-visual-pattern"></div>
+            
+            <!-- Decorative Golden Geometry Lines -->
+            <svg style="position: absolute; width: 380px; height: 380px; opacity: 0.18; pointer-events: none;" viewBox="0 0 200 200">
+              <circle cx="100" cy="100" r="92" fill="none" stroke="var(--color-gold)" stroke-width="1" stroke-dasharray="6,4" />
+              <circle cx="100" cy="100" r="76" fill="none" stroke="var(--color-primary)" stroke-width="0.6" />
+            </svg>
+
+            <!-- Floating Badges -->
+            <div class="hero-badge-float top-right">
+              <svg class="hero-badge-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+              <span>حلول محاسبية متكاملة</span>
+            </div>
+
+            <div class="hero-badge-float bottom-left">
+              <svg class="hero-badge-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <span>دقة موثوقة 100%</span>
+            </div>
+
+            <!-- Central Logo Card -->
+            <div class="hero-logo-card">
+              <img src="images/logo.svg" alt="شعار شركة ثقة للاستشارات المحاسبية والمالية">
+            </div>
+
+            <!-- Bottom Badges Row -->
+            <div style="display: flex; gap: 0.6rem; margin-top: 1.5rem; position: relative; z-index: 2; flex-wrap: wrap; justify-content: center;">
+              <span style="background: var(--bg-dark); color: #fff; padding: 0.4rem 0.95rem; border-radius: 20px; font-size: 0.8rem; font-weight: 500; box-shadow: 0 4px 12px rgba(20,36,58,0.15);">✓ ثقة في الأرقام</span>
+              <span style="background: rgba(183, 160, 120, 0.15); color: var(--color-primary); border: 1px solid var(--color-gold-border); padding: 0.4rem 0.95rem; border-radius: 20px; font-size: 0.8rem; font-weight: 600;">★ شراكة في النجاح</span>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Hero Bottom Tagline -->
+      <div class="hero-footer-bar">
+        <div class="hero-footer-tagline">
+          الدقة في الأرقام.. تصنع الفرق في القرارات.
+        </div>
+        <div style="font-size: 0.85rem; color: var(--color-secondary);">
+          شركة ثقة للاستشارات المحاسبية والمالية
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       SECTION 2: ABOUT US (من نحن)
+       ========================================== -->
+  <section class="about-section" id="about">
+    <div class="container">
+      <div class="about-grid">
+        
+        <div class="about-card">
+          <div class="section-subtitle">عن الشركة</div>
+          <h2 class="about-quote">
+            "نحن لا ندير الأرقام فقط.. بل نصنع وضوحًا ماليًا لأعمالك."
+          </h2>
+          <p class="about-text">
+            ثقة للاستشارات المحاسبية والمالية شركة متخصصة في تقديم الخدمات المحاسبية والمالية والاستشارية للشركات والمنشآت.
+          </p>
+          <p class="about-text">
+            نعمل على مساعدة عملائنا في تنظيم أعمالهم المالية، وتحسين كفاءة الأداء، وتوفير رؤية أكثر وضوحًا تساعدهم على اتخاذ قرارات مدروسة.
+          </p>
+          <p class="about-text">
+            نؤمن بأن العلاقة الناجحة مع العميل تبدأ بالثقة، وتستمر بالدقة والشفافية والالتزام.
+          </p>
+
+          <div class="about-highlight-box">
+            <p class="about-highlight-text">
+              "أنت تركز على نمو أعمالك.. ونحن نهتم بالتفاصيل المالية."
+            </p>
+          </div>
+        </div>
+
+        <div style="display: flex; flex-direction: column; gap: 2rem; justify-content: center;">
+          <div style="padding: 2.5rem; background-color: var(--bg-alt); border-radius: var(--radius-md); border: 1px solid var(--color-border);">
+            <h3 style="font-size: 1.25rem; color: var(--color-primary); margin-bottom: 1rem;">نهجنا المهني</h3>
+            <p style="font-size: 0.98rem; color: var(--color-secondary); line-height: 1.85; font-weight: 300;">
+              نعتمد أحدث معايير المحاسبة والتحليل المالي المعتمدة، مع تقديم حلول مرنة تتكيف مع حجم نشاطك وطبيعة أهدافك الاستثمارية، مما يضمن أقصى درجات الامتثال والكفاءة.
+            </p>
+          </div>
+
+          <div style="padding: 2.5rem; background-color: var(--bg-card); border-radius: var(--radius-md); border: 1px solid var(--color-border); box-shadow: var(--shadow-subtle);">
+            <h3 style="font-size: 1.25rem; color: var(--color-primary); margin-bottom: 1rem;">التزامنا التام</h3>
+            <p style="font-size: 0.98rem; color: var(--color-secondary); line-height: 1.85; font-weight: 300;">
+              السرية المطلقة، السرعة في الإنجاز، والدقة المتناهية هي الركائز الأساسية التي نعتمد عليها في تقديم كافة خدماتنا المحاسبية والزكوية والإدارية.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       SECTION 3: VISION, MISSION, VALUES
+       ========================================== -->
+  <section class="vmv-section">
+    <div class="container">
+      
+      <div class="text-center mx-auto" style="max-width: 700px;">
+        <div class="section-subtitle">الرؤية والرسالة والقيم</div>
+        <h2 class="section-title">قيم راسخة.. ورؤية تصنع المستقبل.</h2>
+      </div>
+
+      <div class="vmv-grid">
+        
+        <!-- Vision -->
+        <div class="vmv-card">
+          <div class="vmv-icon">
+            <svg viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+          </div>
+          <h3 class="vmv-title">رؤيتنا</h3>
+          <p class="vmv-body">
+            أن نكون الشريك المالي الموثوق للشركات، وأن نسهم في بناء مستقبل أكثر استقرارًا ونموًا لأعمال عملائنا في مختلف القطاعات.
+          </p>
+        </div>
+
+        <!-- Mission -->
+        <div class="vmv-card">
+          <div class="vmv-icon">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+          </div>
+          <h3 class="vmv-title">رسالتنا</h3>
+          <p class="vmv-body">
+            تقديم خدمات محاسبية ومالية واستشارية متكاملة ترتكز على الدقة والشفافية، وتساعد المنشآت على تحقيق أهدافها بكفاءة ومصداقية.
+          </p>
+        </div>
+
+        <!-- Values -->
+        <div class="vmv-card">
+          <div class="vmv-icon">
+            <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+          </div>
+          <h3 class="vmv-title">قيمنا الجوهرية</h3>
+          <ul class="values-list">
+            <li class="values-item">
+              <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>الثقة والشفافية</span>
+            </li>
+            <li class="values-item">
+              <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>الدقة والاحترافية</span>
+            </li>
+            <li class="values-item">
+              <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>الالتزام والمسؤولية</span>
+            </li>
+            <li class="values-item">
+              <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>التطوير المستمر</span>
+            </li>
+            <li class="values-item">
+              <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>الشراكة والنجاح</span>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================
+       SECTION 4: SERVICES Grid (خدماتنا)
+       ========================================== -->
+  <section class="services-section" id="services">
+    <div class="container">
+      
+      <div class="text-center mx-auto" style="max-width: 750px;">
+        <div class="section-subtitle">خدماتنا المتخصصة</div>
+        <h2 class="section-title">حلول مالية متكاملة.. تمنح أعمالك مساحة أكبر للنمو.</h2>
+        <p class="section-desc mx-auto">
+          من تنظيم الحسابات اليومية إلى التخطيط المالي الاستراتيجي، نقدم خدمات مصممة لتلبية احتياجات منشأتك ودعم استقرارها المالي.
+        </p>
+      </div>
+
+      <!-- Interactive Filter Tabs -->
+      <div class="services-filter">
+        <button class="filter-btn active" onclick="filterServices('all')">جميع الخدمات (19)</button>
+        <button class="filter-btn" onclick="filterServices('operations')">المحاسبة والعمليات</button>
+        <button class="filter-btn" onclick="filterServices('advisory')">التحليل والاستشارات</button>
+        <button class="filter-btn" onclick="filterServices('compliance')">الزكاة والحوكمة</button>
+      </div>
+
+      <!-- 19 Services Grid Container -->
+      <div class="services-grid" id="servicesGrid">
+
+        <!-- 1. جرد وإدارة المخزون -->
+        <div class="service-card" data-category="operations">
+          <div>
+            <div class="service-header">
+              <div class="service-icon">
+                <svg viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+              </div>
+              <h3 class="service-name">جرد وإدارة المخزون</h3>
+            </div>
+            <p class="service-desc">نساعدك على ضبط حركة المخزون، ومتابعة الأصناف، وتقليل الفاقد، وتحسين كفاءة إدارة المخزون.</p>
+          </div>
+          <div class="service-footer">
+            <span class="service-link" onclick="openServiceModal('inventory')">
+              <span>اكتشف المزيد</span>
+              <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </span>
+          </div>
+        </div>
+
+        <!-- 2. التقارير اليومية والأسبوعية والشهرية -->
+        <div class="service-card" data-category="operations">
+          <div>
+            <div class="service-header">
+              <div class="service-icon">
+                <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+              </div>
+              <h3 class="service-name">التقارير اليومية والأسبوعية والشهرية</h3>
+            </div>
+            <p class="service-desc">تقارير مالية واضحة تمنحك رؤية دقيقة للأداء وتساعدك على اتخاذ قرارات مدروسة.</p>
+          </div>
+          <div class="service-footer">
+            <span class="service-link" onclick="openServiceModal('reports')">
+              <span>اكتشف المزيد</span>
+              <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </span>
+          </div>
+        </div>
+
+        <!-- 3. مراجعة الحسابات الحالية -->
+        <div class="service-card" data-category="operations">
+          <div>
+            <div class="service-header">
+              <div class="service-icon">
+                <svg viewBox="0 0 24 24"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+              </div>
+              <h3 class="service-name">مراجعة الحسابات الحالية</h3>
+            </div>
+            <p class="service-desc">مراجعة البيانات المالية واكتشاف الأخطاء وتعزيز دقة السجلات والحسابات.</p>
+          </div>
+          <div class="service-footer">
+            <span class="service-link" onclick="openServiceModal('audit')">
+              <span>اكتشف المزيد</span>
+              <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </span>
+          </div>
+        </div>
+
+        <!-- 4. الاستلام والتسليم للحركة اليومية -->
+        <div class="service-card" data-category="operations">
+          <div>
+            <div class="service-header">
+              <div class="service-icon">
+                <svg viewBox="0 0 24 24"><polyline points="17 1 21 5 17 9"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/><polyline points="7 23 3 19 7 15"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/></svg>
+              </div>
+              <h3 class="service-name">الاستلام والتسليم للحركة اليومية</h3>
+            </div>
+            <p class="service-desc">متابعة دقيقة لحركة المشتريات والمبيعات والقبض والصرف، لضمان تنظيم العمليات اليومية.</p>
+          </div>
+          <div class="service-footer">
+            <span class="service-link" onclick="openServiceModal('transactions')">
+              <span>اكتشف المزيد</span>
+              <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </span>
+          </div>
+        </div>
+
+        <!-- 5. الإقفال اليومي -->
+        <div class="service-card" data-category="operations">
+          <div>
+            <div class="service-header">
+              <div class="service-icon">
+                <svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+              </div>
+              <h3 class="service-name">الإقفال اليومي</h3>
+            </div>
+            <p class="service-desc">تنظيم الإقفالات اليومية ومراجعة المطابقات المالية والنقدية لتعزيز دقة الحسابات.</p>
+          </div>
+          <div class="service-footer">
+            <span class="service-link" onclick="openServiceModal('closing')">
+              <span>اكتشف المزيد</span>
+              <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </span>
+          </div>
+        </div>
+
+        <!-- 6. التحليل المالي -->
+        <div class="service-card" data-category="advisory">
+          <div>
+            <div class="service-header">
+              <div class="service-icon">
+                <svg viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+              </div>
+              <h3 class="service-name">التحليل المالي</h3>
+            </div>
+            <p class="service-desc">تحليل الأداء والربحية والتدفقات النقدية، لاكتشاف فرص التحسين ودعم القرارات المالية.</p>
+          </div>
+          <div class="service-footer">
+            <span class="service-link" onclick="openServiceModal('analysis')">
+              <span>اكتشف المزيد</span>
+              <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </span>
+          </div>
+        </div>
+
+        <!-- 7. الرواتب والموظفون -->
+        <div class="service-card" data-category="operations">
+          <div>
+            <div class="service-header">
+              <div class="service-icon">
+                <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+              </div>
+              <h3 class="service-name">الرواتب والموظفون</h3>
+            </div>
+            <p class="service-desc">تنظيم الرواتب والبدلات والاستقطاعات ومكافآت الموظفين بكفاءة ودقة.</p>
+          </div>
+          <div class="service-footer">
+            <span class="service-link" onclick="openServiceModal('payroll')">
+              <span>اكتشف المزيد</span>
+              <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </span>
+          </div>
+        </div>
+
+        <!-- 8. الإشراف المحاسبي والمالي -->
+        <div class="service-card" data-category="operations">
+          <div>
+            <div class="service-header">
+              <div class="service-icon">
+                <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              </div>
+              <h3 class="service-name">الإشراف المحاسبي والمالي</h3>
+            </div>
+            <p class="service-desc">دعم محاسبي ومالي متخصص يساعدك على تنظيم أعمالك وتحسين جودة الأداء.</p>
+          </div>
+          <div class="service-footer">
+            <span class="service-link" onclick="openServiceModal('supervision')">
+              <span>اكتشف المزيد</span>
+              <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </span>
+          </div>
+        </div>
+
+        <!-- 9. الإقرارات الزكوية والضريبية وإقرارات الدخل -->
+        <div class="service-card" data-category="compliance">
+          <div>
+            <div class="service-header">
+              <div class="service-icon">
+                <svg viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg>
+              </div>
+              <h3 class="service-name">الإقرارات الزكوية والضريبية وإقرارات الدخل</h3>
+            </div>
+            <p class="service-desc">إعداد ومراجعة الإقرارات ومتابعة متطلبات تقديمها وفق الأنظمة المعمول بها.</p>
+          </div>
+          <div class="service-footer">
+            <span class="service-link" onclick="openServiceModal('tax')">
+              <span>اكتشف المزيد</span>
+              <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </span>
+          </div>
+        </div>
+
+        <!-- 10. خدمات الحوكمة للشركات -->
+        <div class="service-card" data-category="compliance">
+          <div>
+            <div class="service-header">
+              <div class="service-icon">
+                <svg viewBox="0 0 24 24"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+              </div>
+              <h3 class="service-name">خدمات الحوكمة للشركات</h3>
+            </div>
+            <p class="service-desc">تعزيز الشفافية والمساءلة وتنظيم السياسات والإجراءات وإدارة المخاطر.</p>
+          </div>
+          <div class="service-footer">
+            <span class="service-link" onclick="openServiceModal('governance')">
+              <span>اكتشف المزيد</span>
+              <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </span>
+          </div>
+        </div>
+
+        <!-- 11. تأسيس الشركات -->
+        <div class="service-card" data-category="compliance">
+          <div>
+            <div class="service-header">
+              <div class="service-icon">
+                <svg viewBox="0 0 24 24"><path d="M3 21h18M3 7v14M21 7v14M6 11h4M6 15h4M14 11h4M14 15h4M9 3l3 4 3-4"/></svg>
+              </div>
+              <h3 class="service-name">تأسيس الشركات</h3>
+            </div>
+            <p class="service-desc">مساندة الشركات في إجراءات التأسيس والتراخيص وتنظيم المتطلبات النظامية.</p>
+          </div>
+          <div class="service-footer">
+            <span class="service-link" onclick="openServiceModal('incorporation')">
+              <span>اكتشف المزيد</span>
+              <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </span>
+          </div>
+        </div>
+
+        <!-- 12. مدير حساب -->
+        <div class="service-card" data-category="operations">
+          <div>
+            <div class="service-header">
+              <div class="service-icon">
+                <svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+              </div>
+              <h3 class="service-name">مدير حساب مخصص</h3>
+            </div>
+            <p class="service-desc">مدير حساب مخصص لمتابعة أعمالك المالية وتنسيق احتياجاتك المحاسبية باستمرار.</p>
+          </div>
+          <div class="service-footer">
+            <span class="service-link" onclick="openServiceModal('account_manager')">
+              <span>اكتشف المزيد</span>
+              <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </span>
+          </div>
+        </div>
+
+        <!-- 13. زيارات أسبوعية -->
+        <div class="service-card" data-category="operations">
+          <div>
+            <div class="service-header">
+              <div class="service-icon">
+                <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+              </div>
+              <h3 class="service-name">زيارات أسبوعية</h3>
+            </div>
+            <p class="service-desc">زيارات دورية لمتابعة سير الأعمال ومراجعة الأداء المالي وتحديد فرص التحسين.</p>
+          </div>
+          <div class="service-footer">
+            <span class="service-link" onclick="openServiceModal('weekly_visits')">
+              <span>اكتشف المزيد</span>
+              <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </span>
+          </div>
+        </div>
+
+        <!-- 14. الاعتراضات المالية والضريبية -->
+        <div class="service-card" data-category="compliance">
+          <div>
+            <div class="service-header">
+              <div class="service-icon">
+                <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+              </div>
+              <h3 class="service-name">الاعتراضات المالية والضريبية</h3>
+            </div>
+            <p class="service-desc">إعداد ومتابعة الاعتراضات المالية والضريبية وصياغة الردود والمستندات المطلوبة.</p>
+          </div>
+          <div class="service-footer">
+            <span class="service-link" onclick="openServiceModal('objections')">
+              <span>اكتشف المزيد</span>
+              <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </span>
+          </div>
+        </div>
+
+        <!-- 15. التخطيط المالي والموازنات التقديرية -->
+        <div class="service-card" data-category="advisory">
+          <div>
+            <div class="service-header">
+              <div class="service-icon">
+                <svg viewBox="0 0 24 24"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+              </div>
+              <h3 class="service-name">التخطيط المالي والموازنات التقديرية</h3>
+            </div>
+            <p class="service-desc">تخطيط مالي مدروس وموازنات تقديرية تساعدك على إدارة الموارد وتحديد الأهداف.</p>
+          </div>
+          <div class="service-footer">
+            <span class="service-link" onclick="openServiceModal('budgeting')">
+              <span>اكتشف المزيد</span>
+              <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </span>
+          </div>
+        </div>
+
+        <!-- 16. تقييم الأداء المالي -->
+        <div class="service-card" data-category="advisory">
+          <div>
+            <div class="service-header">
+              <div class="service-icon">
+                <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+              </div>
+              <h3 class="service-name">تقييم الأداء المالي</h3>
+            </div>
+            <p class="service-desc">تحليل النتائج المالية وقياس الأداء وتحديد نقاط القوة وفرص التطوير.</p>
+          </div>
+          <div class="service-footer">
+            <span class="service-link" onclick="openServiceModal('evaluation')">
+              <span>اكتشف المزيد</span>
+              <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </span>
+          </div>
+        </div>
+
+        <!-- 17. إعداد السياسات والإجراءات المالية -->
+        <div class="service-card" data-category="advisory">
+          <div>
+            <div class="service-header">
+              <div class="service-icon">
+                <svg viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+              </div>
+              <h3 class="service-name">إعداد السياسات والإجراءات المالية</h3>
+            </div>
+            <p class="service-desc">وضع سياسات وإجراءات مالية ومحاسبية واضحة تساعد على تنظيم العمل ورفع الكفاءة.</p>
+          </div>
+          <div class="service-footer">
+            <span class="service-link" onclick="openServiceModal('policies')">
+              <span>اكتشف المزيد</span>
+              <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </span>
+          </div>
+        </div>
+
+        <!-- 18. إعادة الهيكلة المالية والتشغيلية -->
+        <div class="service-card" data-category="advisory">
+          <div>
+            <div class="service-header">
+              <div class="service-icon">
+                <svg viewBox="0 0 24 24"><path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"/></svg>
+              </div>
+              <h3 class="service-name">إعادة الهيكلة المالية والتشغيلية</h3>
+            </div>
+            <p class="service-desc">تطوير الهياكل المالية والتشغيلية لتحسين كفاءة الموارد وتنظيم العمليات.</p>
+          </div>
+          <div class="service-footer">
+            <span class="service-link" onclick="openServiceModal('restructuring')">
+              <span>اكتشف المزيد</span>
+              <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </span>
+          </div>
+        </div>
+
+        <!-- 19. دراسات الجدوى المالية والاقتصادية -->
+        <div class="service-card" data-category="advisory">
+          <div>
+            <div class="service-header">
+              <div class="service-icon">
+                <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+              </div>
+              <h3 class="service-name">دراسات الجدوى المالية والاقتصادية</h3>
+            </div>
+            <p class="service-desc">دراسات متخصصة تساعدك على تقييم الفرص الاستثمارية وفهم الجدوى المالية للمشروعات.</p>
+          </div>
+          <div class="service-footer">
+            <span class="service-link" onclick="openServiceModal('feasibility')">
+              <span>اكتشف المزيد</span>
+              <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </span>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="services-bottom-tagline">
+        "كل رقم له دلالة.. وكل قرار يستحق رؤية واضحة."
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================
+       SECTION 5: TEAM EXPERTISE / SPECIALTIES
+       ========================================== -->
+  <section class="team-section" id="team">
+    <div class="container">
+      <div class="team-grid">
+        
+        <div>
+          <div class="section-subtitle">فريق العمل والتخصصات</div>
+          <h2 class="section-title">خبرات متخصصة.. تعمل من أجل نجاحك.</h2>
+          <p class="section-desc">
+            يعمل فريقنا على تقديم الدعم المحاسبي والمالي والاستشاري من خلال تخصصات متنوعة وخبرات عملية تساعد على تلبية احتياجات منشأتك بكفاءة عالية.
+          </p>
+
+          <div class="specialties-list">
+            <div class="specialty-item">
+              <span class="specialty-number">01</span>
+              <span class="specialty-title">المحاسبة المالية والتنظيم المحاسبي</span>
+            </div>
+            <div class="specialty-item">
+              <span class="specialty-number">02</span>
+              <span class="specialty-title">المراجعة والتدقيق الداخلي</span>
+            </div>
+            <div class="specialty-item">
+              <span class="specialty-number">03</span>
+              <span class="specialty-title">الاستشارات المالية والتخطيط الاستراتيجي</span>
+            </div>
+            <div class="specialty-item">
+              <span class="specialty-number">04</span>
+              <span class="specialty-title">الضرائب والزكاة والامتثال النظامي</span>
+            </div>
+            <div class="specialty-item">
+              <span class="specialty-number">05</span>
+              <span class="specialty-title">إدارة الأعمال والأنظمة المحاسبية المتقدمة</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="team-image-box">
+          <h3 class="team-box-title">تكامل الخبرات لدعم نمو منشأتك</h3>
+          <p class="team-box-desc">
+            نجمع بين الفهم العميق للأنظمة المحلية والمعايير المحاسبية الدولية، لتزويد منشأتك برؤى تحليلية تتجاوز مجرد إعداد القوائم المالية إلى توجيه المسار الاستثماري بخطى ثابتة.
+          </p>
+
+          <div style="padding-top: 1.5rem; border-top: 1px solid rgba(255, 255, 255, 0.12); display: flex; align-items: center; justify-content: space-between;">
+            <div>
+              <div style="font-size: 0.82rem; color: var(--color-gold);">تغطية شاملة</div>
+              <div style="font-family: var(--font-heading); font-size: 1.05rem; font-weight: 500; color: #ffffff;">الرياض وكافة مناطق المملكة</div>
+            </div>
+            <button class="btn btn-outline-gold" onclick="openConsultationModal()">تواصل مع الفريق</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       SECTION 6: WHY CHOOSE THIQA (لماذا تختار ثقة؟)
+       ========================================== -->
+  <section class="why-section" id="why">
+    <div class="why-bg-pattern"></div>
+    <div class="container">
+      
+      <div class="text-center mx-auto" style="max-width: 750px; position: relative; z-index: 2;">
+        <div class="section-subtitle" style="color: var(--color-gold);">لماذا تختار شركة ثقة؟</div>
+        <h2 class="section-title">شراكة تتجاوز الأرقام.. نحو نجاح أكثر استقرارًا.</h2>
+      </div>
+
+      <div class="why-grid">
+        
+        <div class="why-card">
+          <div class="why-number">01</div>
+          <h3 class="why-card-title">الدقة في التفاصيل</h3>
+          <p class="why-card-desc">نهتم بالتفاصيل المالية التي تصنع فارقًا حقيقيًا في جودة القرارات الاستراتيجية والتنفيذية.</p>
+        </div>
+
+        <div class="why-card">
+          <div class="why-number">02</div>
+          <h3 class="why-card-title">حلول تناسب أعمالك</h3>
+          <p class="why-card-desc">نقدم خدمات مخصصة تتوافق تمامًا مع حجم وطبيعة منشأتك وأهدافك الاستثمارية.</p>
+        </div>
+
+        <div class="why-card">
+          <div class="why-number">03</div>
+          <h3 class="why-card-title">وضوح مالي أكبر</h3>
+          <p class="why-card-desc">نساعدك على فهم الأداء المالي لمنشأتك من خلال تقارير وبيانات منظمة ومبسطة.</p>
+        </div>
+
+        <div class="why-card">
+          <div class="why-number">04</div>
+          <h3 class="why-card-title">متابعة مستمرة</h3>
+          <p class="why-card-desc">نحرص على التواجد المستمر ومتابعة كافة الأعمال المالية وفق نطاق الخدمة المتفق عليه.</p>
+        </div>
+
+        <div class="why-card">
+          <div class="why-number">05</div>
+          <h3 class="why-card-title">التزام وشفافية</h3>
+          <p class="why-card-desc">نبني علاقتنا مع عملائنا على أسس متينة من المصداقية والوضوح الكامل في كل خطوة.</p>
+        </div>
+
+        <div class="why-card">
+          <div class="why-number">06</div>
+          <h3 class="why-card-title">شراكة طويلة الأمد</h3>
+          <p class="why-card-desc">نعمل كجزء من فريقك لدعم استقرار أعمالك وتحقيق أهدافك المالية المستقبليّة.</p>
+        </div>
+
+      </div>
+
+      <div class="why-footer-banner">
+        <div class="why-footer-text">
+          "ثقتك مسؤوليتنا.. ونجاحك هو غايتنا."
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================
+       SECTION 7: ADDITIONAL STRATEGIC SERVICES
+       ========================================== -->
+  <section class="additional-section">
+    <div class="container">
+      
+      <div class="text-center mx-auto" style="max-width: 700px;">
+        <div class="section-subtitle">خدمات إضافية واستراتيجية</div>
+        <h2 class="section-title">نظرة أوسع.. لقرارات مالية أكثر وعيًا.</h2>
+      </div>
+
+      <div class="additional-grid">
+        
+        <div class="additional-card">
+          <div class="additional-icon">
+            <svg viewBox="0 0 24 24"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+          </div>
+          <h3 class="additional-title">التخطيط المالي والموازنات التقديرية</h3>
+        </div>
+
+        <div class="additional-card">
+          <div class="additional-icon">
+            <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          </div>
+          <h3 class="additional-title">تقييم الأداء المالي للمنشآت</h3>
+        </div>
+
+        <div class="additional-card">
+          <div class="additional-icon">
+            <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+          </div>
+          <h3 class="additional-title">إعداد السياسات والإجراءات المالية</h3>
+        </div>
+
+        <div class="additional-card">
+          <div class="additional-icon">
+            <svg viewBox="0 0 24 24"><path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"/></svg>
+          </div>
+          <h3 class="additional-title">إعادة الهيكلة المالية والتشغيلية</h3>
+        </div>
+
+        <div class="additional-card">
+          <div class="additional-icon">
+            <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          </div>
+          <h3 class="additional-title">دراسات الجدوى المالية والاقتصادية</h3>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================
+       SECTION 8: CALL TO ACTION
+       ========================================== -->
+  <section class="cta-section">
+    <div class="container">
+      <div class="cta-box">
+        <h2 class="cta-title">جاهز تمنح أعمالك رؤية مالية أوضح؟</h2>
+        <p class="cta-desc">
+          دعنا نساعدك على تنظيم أعمالك المالية، وتحسين كفاءة الأداء، واختيار الحلول المحاسبية والاستشارية التي تناسب احتياجات منشأتك.
+        </p>
+        <div class="cta-actions">
+          <button class="btn btn-primary" onclick="openConsultationModal()">ابدأ رحلتك مع ثقة</button>
+          <a href="#contact" class="btn btn-secondary">تحدث معنا</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       SECTION 9: CONTACT US (تواصل معنا)
+       ========================================== -->
+  <section class="contact-section" id="contact">
+    <div class="container">
+      
+      <div class="text-center mx-auto" style="max-width: 700px;">
+        <div class="section-subtitle">تواصل معنا</div>
+        <h2 class="section-title">نحن هنا لنكون شريكك في النجاح.</h2>
+        <p class="section-desc mx-auto">
+          سواء كنت تبحث عن تنظيم حساباتك، أو تطوير أدائك المالي، أو الحصول على استشارة متخصصة، يسعدنا أن نبدأ معك حوارًا يضع احتياجات أعمالك في المقدمة.
+        </p>
+      </div>
+
+      <div class="contact-grid">
+        
+        <!-- Contact Information -->
+        <div class="contact-info">
+          <div class="contact-card-info">
+            
+            <div class="contact-item">
+              <div class="contact-icon">
+                <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              </div>
+              <div class="contact-details">
+                <span class="contact-label">رقم الهاتف والواتساب</span>
+                <a href="https://wa.me/966595030043" target="_blank" class="contact-value">0595030043</a>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <div class="contact-icon">
+                <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              </div>
+              <div class="contact-details">
+                <span class="contact-label">البريد الإلكتروني</span>
+                <a href="mailto:info@thiqa-consult.com" class="contact-value" style="direction: ltr; text-align: right;">info@thiqa-consult.com</a>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <div class="contact-icon">
+                <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+              </div>
+              <div class="contact-details">
+                <span class="contact-label">الموقع الإلكتروني</span>
+                <a href="https://www.thiqa-consult.com" target="_blank" class="contact-value" style="direction: ltr; text-align: right;">www.thiqa-consult.com</a>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <div class="contact-icon">
+                <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              </div>
+              <div class="contact-details">
+                <span class="contact-label">الموقع الجغرافي</span>
+                <span class="contact-value" style="direction: rtl;">الرياض - المملكة العربية السعودية</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Contact Form -->
+        <div class="contact-form-container">
+          <h3 class="form-title">نموذج طلب الاستشارة</h3>
+          <form id="contactForm" onsubmit="handleFormSubmit(event)">
+            
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label" for="fullName">الاسم الكامل *</label>
+                <input type="text" id="fullName" class="form-input" placeholder="أدخل اسمك الكريم" required>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="companyName">اسم الشركة / المنشأة *</label>
+                <input type="text" id="companyName" class="form-input" placeholder="اسم التجارة أو الشركة" required>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label" for="phone">رقم الهاتف *</label>
+                <input type="tel" id="phone" class="form-input" placeholder="05xxxxxxxx" required>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="email">البريد الإلكتروني *</label>
+                <input type="email" id="email" class="form-input" placeholder="example@domain.com" required>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="serviceSelect">نوع الخدمة المطلوبة</label>
+              <select id="serviceSelect" class="form-select">
+                <option value="عام">اختر الخدمة المطلوبة...</option>
+                <option value="جرد وإدارة المخزون">جرد وإدارة المخزون</option>
+                <option value="التقارير المالية">التقارير اليومية والأسبوعية والشهرية</option>
+                <option value="مراجعة الحسابات">مراجعة الحسابات الحالية</option>
+                <option value="التحليل المالي">التحليل المالي والدراسات</option>
+                <option value="الإقرارات الزكوية والضريبية">الإقرارات الزكوية والضريبية</option>
+                <option value="خدمات الحوكمة">خدمات الحوكمة للشركات</option>
+                <option value="إعادة الهيكلة">إعادة الهيكلة المالية والتشغيلية</option>
+                <option value="دراسات الجدوى">دراسات الجدوى الاقتصادية</option>
+                <option value="خدمة أخرى">استشارة مالية عامة</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="message">تفاصيل الطلب أو الرسالة</label>
+              <textarea id="message" class="form-textarea" placeholder="اكتب نبذة مختصرة عن متطلبات منشأتك..."></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary" style="width: 100%; padding: 1rem; display: flex; align-items: center; justify-content: center; gap: 0.6rem;">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.7-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.1-.2.2-.3.2-.6.1-.3-.1-1.2-.5-2.3-1.5-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6.1-.1.3-.3.4-.5.1-.1.2-.3.3-.4.1-.2 0-.4 0-.5-.1-.1-.7-1.7-1-2.3-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.4s1 2.8 1.2 3c.1.2 2 3.1 4.9 4.3.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.5-.1 1.7-.7 1.9-1.4.2-.6.2-1.2.2-1.3-.1-.1-.3-.2-.6-.3Z"/><path d="M12 3a9 9 0 0 0-7.7 13.6L3 21l4.5-1.2A9 9 0 1 0 12 3Zm0 16.4c-1.5 0-3-.4-4.2-1.1l-.3-.2-2.7.7.7-2.6-.2-.3A7.4 7.4 0 1 1 19.4 12 7.4 7.4 0 0 1 12 19.4Z"/></svg>
+              <span>إرسال طلب الاستشارة عبر واتساب</span>
+            </button>
+          </form>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================
+       SECTION 10: FOOTER (التذييل)
+       ========================================== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        
+        <!-- Column 1: Brand -->
+        <div class="footer-brand">
+          <a href="#hero" class="brand-logo" aria-label="شركة ثقة للاستشارات المحاسبية والمالية">
+            <img src="images/logo-light.svg" alt="شركة ثقة للاستشارات المحاسبية والمالية" class="footer-logo-img">
+          </a>
+
+          <div class="footer-slogan">
+            "ثقة في الأرقام.. شراكة في النجاح."
+          </div>
+
+          <p class="footer-desc">
+            شركة استشارية متخصصة تقدم رؤية مالية متطورة، وإدارة محاسبية محترفة تمنح منشأتك الأمان والاستقرار والنمو المستدام.
+          </p>
+        </div>
+
+        <!-- Column 2: Quick Links -->
+        <div>
+          <h4 class="footer-heading">روابط سريعة</h4>
+          <ul class="footer-links">
+            <li><a href="#hero">الرئيسية</a></li>
+            <li><a href="#about">من نحن</a></li>
+            <li><a href="#services">خدماتنا المحاسبية</a></li>
+            <li><a href="#team">فريق العمل والتخصصات</a></li>
+            <li><a href="#why">لماذا ثقة؟</a></li>
+            <li><a href="#contact">تواصل معنا</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 3: Services Links -->
+        <div>
+          <h4 class="footer-heading">خدماتنا الرئيسية</h4>
+          <ul class="footer-links">
+            <li><a href="#services">التحليل والتخطيط المالي</a></li>
+            <li><a href="#services">الإقرارات الزكوية والضريبية</a></li>
+            <li><a href="#services">مراجعة الحسابات والإقفالات</a></li>
+            <li><a href="#services">خدمات الحوكمة والتأسيس</a></li>
+            <li><a href="#services">دراسات الجدوى الاقتصادية</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 4: Contact Summary -->
+        <div>
+          <h4 class="footer-heading">المكتب الرئيسي</h4>
+          <div class="footer-contact-item">
+            <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span>الرياض - المملكة العربية السعودية</span>
+          </div>
+          <div class="footer-contact-item">
+            <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            <span style="direction: ltr;">0595030043</span>
+          </div>
+          <div class="footer-contact-item">
+            <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            <span>info@thiqa-consult.com</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Copyright -->
+      <div class="footer-bottom">
+        <div>
+          © 2026 شركة ثقة للاستشارات المحاسبية والمالية. جميع الحقوق محفوظة.
+        </div>
+        <div style="color: var(--color-gold);">
+          دقة في الأرقام.. شراكة في النجاح
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==========================================
+       MODALS SYSTEM (Service & Consultation)
+       ========================================== -->
+  
+  <!-- Service Details Modal -->
+  <div class="modal-overlay" id="serviceModal">
+    <div class="modal-container">
+      <button class="modal-close" onclick="closeServiceModal()">
+        <svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+      <div class="modal-header">
+        <span class="modal-service-badge" id="mBadge">خدمة متخصصة</span>
+        <h3 class="modal-title" id="mTitle">اسم الخدمة</h3>
+      </div>
+      <div class="modal-body" id="mBody">
+        تفاصيل الخدمة...
+      </div>
+      <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+        <button class="btn btn-primary" onclick="requestServiceFromModal()">اطلب هذه الخدمة الآن</button>
+        <button class="btn btn-secondary" onclick="closeServiceModal()">إغلاق</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification -->
+  <div class="toast-notification" id="toast">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+    <span id="toastMsg">تم استلام طلبك بنجاح، وسيتواصل معك مستشارنا قريبًا.</span>
+  </div>
+
+  <!-- ==========================================
+       JAVASCRIPT LOGIC
+       ========================================== -->
+  <script>
+    // Header Scroll Effect & Navigation Active State
+    const header = document.getElementById('header');
+    const navMenu = document.getElementById('navMenu');
+    const mobileToggle = document.getElementById('mobileToggle');
+    const navLinks = document.querySelectorAll('.nav-link');
+
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 40) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+
+      // Update Active Navigation Link based on section scroll
+      let currentSection = '';
+      const sections = document.querySelectorAll('section[id]');
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop - 120;
+        if (window.scrollY >= sectionTop) {
+          currentSection = section.getAttribute('id');
+        }
+      });
+
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === `#${currentSection}`) {
+          link.classList.add('active');
+        }
+      });
+    });
+
+    // Mobile Menu Toggle
+    mobileToggle.addEventListener('click', () => {
+      navMenu.classList.toggle('open');
+    });
+
+    // Close Mobile Menu on link click
+    navLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        navMenu.classList.remove('open');
+      });
+    });
+
+    // Service Filtering Functionality
+    function filterServices(category) {
+      const cards = document.querySelectorAll('.service-card');
+      const filterBtns = document.querySelectorAll('.filter-btn');
+
+      filterBtns.forEach(btn => btn.classList.remove('active'));
+      event.target.classList.add('active');
+
+      cards.forEach(card => {
+        if (category === 'all' || card.getAttribute('data-category') === category) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+
+    // Modal Service Data & Functions
+    const servicesData = {
+      inventory: {
+        title: "جرد وإدارة المخزون",
+        badge: "المحاسبة والتشغيل",
+        desc: "نقدم حلولًا متطورة لضبط وحصر المخزون السلعي بكفاءة متناهية، ومتابعة حركة الأصناف الواردة والمنصرفة، وتحديد الهدر والفاقد وتطبيق سياسة التقييم المحاسبي المناسبة لمنشأتك.",
+        features: ["جرد فعلي ومطابقة مع السجلات الدفترية", "تقييم المخزون وفق المعايير المحاسبية", "تقارير دورية بالأصناف الراكدة والمتحركة"]
+      },
+      reports: {
+        title: "التقارير اليومية والأسبوعية والشهرية",
+        badge: "المحاسبة والتشغيل",
+        desc: "نعد تقارير مالية وتأشيرية دقيقة توفر للإدارة العليا رؤية شاملة ولحظية حول الأداء المالي والتدفقات النقدية والأرباح والخسائر للتمكن من اتخاذ القرارات في وقتها المناسب.",
+        features: ["قوائم التدفقات النقدية والربحية", "مؤشرات الأداء المالي الرئيسية (KPIs)", "تقارير المقارنة بين الميزانية التقديرية والفعلي"]
+      },
+      audit: {
+        title: "مراجعة الحسابات الحالية",
+        badge: "المحاسبة والتشغيل",
+        desc: "فحص دقيق لكافة البيانات القيود والسجلات المالية القائمة لاكتشاف الأخطاء وتصحيح المعالجات المحاسبية لضمان النزاهة والامتثال للمعايير المعتمدة.",
+        features: ["كشف الفروقات والأخطاء القيودية", "إعادة تنظيم الشجرة المحاسبية", "رفع كفاءة وموثوقية القوائم المالية"]
+      },
+      transactions: {
+        title: "الاستلام والتسليم للحركة اليومية",
+        badge: "المحاسبة والتشغيل",
+        desc: "نظام إشراف ومتابعة يومي لحركة المشتريات والمبيعات والمقبوضات والمصروفات اليومية وضمان توثيقها بالدورة المستندية الصحيحة.",
+        features: ["ضبط الدورة المستندية للمشتريات والمبيعات", "مطابقة الصناديق وحسابات البنوك", "تقليل المخاطر والأخطاء البشرية"]
+      },
+      closing: {
+        title: "الإقفال اليومي",
+        badge: "المحاسبة والتشغيل",
+        desc: "متابعة وإجراء الإقفالات المالية اليومية للمبيعات والمشتريات والنقدية وتدقيق المطابقات لضمان توازن الحسابات أولاً بأول.",
+        features: ["مطابقة النقدية مع شبكات الدفع الإلكتروني", "إقفال الصناديق اليومية", "تسوية الفروقات اليومية"]
+      },
+      analysis: {
+        title: "التحليل المالي والدراسات",
+        badge: "التحليل والاستشارات",
+        desc: "تحليل شامل وهيكلي للهوامش الربحية والتدفقات النقدية وهيكل التكاليف لاكتشاف الفرص الاستثمارية وتحسين الربحية وتعزيز الاستقرار المالي.",
+        features: ["تحليل النسب المالية والربحية", "دراسة نقطة التعادل وهياكل التكلفة", "تقديم توصيات استراتيجية للنمو"]
+      },
+      payroll: {
+        title: "الرواتب والموظفون",
+        badge: "المحاسبة والتشغيل",
+        desc: "إدارة مسيرات الرواتب والبدلات والاستقطاعات ومكافآت نهاية الخدمة وتوثيقها بدقة وفق الأنظمة واللوائح المعمول بها.",
+        features: ["إعداد المسيرات الشهرية وحساب البدلات", "احتساب مكافأة نهاية الخدمة والإجازات", "التوافق مع أنظمة حماية الأجور"]
+      },
+      supervision: {
+        title: "الإشراف المحاسبي والمالي",
+        badge: "المحاسبة والتشغيل",
+        desc: "توفير إشراف ومتابعة مستمرة من قبل مستشارين ماليين ذوي خبرة لتوجيه فريق المحاسبة لديك وتطوير جودة الأداء المالي.",
+        features: ["إشراف دوري على أعمال القسم المحاسبي", "رفع جودة مخرجات النظام المحاسبي", "توجيه الفريق وحل المشكلات المعقدة"]
+      },
+      tax: {
+        title: "الإقرارات الزكوية والضريبية وإقرارات الدخل",
+        badge: "الزكاة والحوكمة",
+        desc: "إعداد ومراجعة وإرسال الإقرارات الزكوية وضريبة القيمة المضافة وإقرارات الاستقطاع والدخل بموثوقية عالية ووفق تعليمات هيئة الزكاة والضريبة والجمارك.",
+        features: ["إعداد وحساب الزكاة وضريبة القيمة المضافة", "الامتثال لمتطلبات هيئة ZATCA", "تجنب الغرامات والمخالفات النظامية"]
+      },
+      governance: {
+        title: "خدمات الحوكمة للشركات",
+        badge: "الزكاة والحوكمة",
+        desc: "صياغة وتطبيق أطر الحوكمة الرشيدة التي تضمن الشفافية وتحديد الصلاحيات والمسؤوليات وإدارة المخاطر وتطوير بيئة العمل.",
+        features: ["إعداد مصفوفة الصلاحيات المالية والإدارية", "إدارة المخاطر والرقابة الداخلية", "تعزيز الشفافية والمساءلة"]
+      },
+      incorporation: {
+        title: "تأسيس الشركات",
+        badge: "الزكاة والحوكمة",
+        desc: "مساندة المستثمرين ورواد الأعمال في الإجراءات المالية والنظامية لتأسيس الشركات واختيار الكيان القانوني الأنسب وتنظيم المتطلبات.",
+        features: ["صياغة عقود التأسيس والهياكل المالية", "إعداد الشجرة المحاسبية الافتتاحية", "التسجيل في الهيئات الحكومية ذات العلاقة"]
+      },
+      account_manager: {
+        title: "مدير حساب مخصص",
+        badge: "المحاسبة والتشغيل",
+        desc: "تعيين مدير حساب متخصص ومباشر يكون نقطة التواصل الرئيسية لمتابعة كافة الشؤون المحاسبية لمنشأتك والإجابة على كافة الاستفسارات.",
+        features: ["تواصل مباشر ومستمر", "تنسيق متطلبات المنشأة بسرعة ودقة", "متابعة دورية وشاملة للأعمال"]
+      },
+      weekly_visits: {
+        title: "زيارات أسبوعية",
+        badge: "المحاسبة والتشغيل",
+        desc: "زيارات ميدانية أو اجتماعات دورية أسبوعية يقدمها مستشارنا لمراجعة الأداء والتأكد من انتظام السجلات ومعالجة أي عقبات فورًا.",
+        features: ["متابعة ميدانية لسير العمل المحاسبي", "مراجعة المستندات والتسويات", "جلسات استشارية مع الإدارة"]
+      },
+      objections: {
+        title: "الاعتراضات المالية والضريبية",
+        badge: "الزكاة والحوكمة",
+        desc: "دراسة وصياغة مذكّرات الاعتراض على الربوط الزكوية والضريبية، وتجهيز الأسانيد والمستندات النظامية ومتابعتها مع الجهات المختصة.",
+        features: ["صياغة الاعتراضات بالأسانيد الفقهية والنظامية", "متابعة ملفات الاعتراض لدى الهيئة", "حماية حقوق المنشأة المالية"]
+      },
+      budgeting: {
+        title: "التخطيط المالي والموازنات التقديرية",
+        badge: "التحليل والاستشارات",
+        desc: "بناء الموازنات التقديرية السنوية والخطط المالية طويلة الأجل لتمكين المنشأة من إدارة التدفقات النقدية وتحديد الأهداف بوضوح.",
+        features: ["إعداد الموازنات الشاملة للمنشأة", "توقع التدفقات النقدية المستقبليّة", "مراقبة الانحرافات وتقويم الأداء"]
+      },
+      evaluation: {
+        title: "تقييم الأداء المالي",
+        badge: "التحليل والاستشارات",
+        desc: "قياس كفاءة استغلال الموارد المالية والأصول، وتحديد نقاط القوة ومجالات التحسين لرفع عائد الاستثمار وتعزيز القيمة السوقية.",
+        features: ["مقارنة الأداء مع معايير القطاع", "قياس عائد الاستثمار والعائد على الأصول", "خطة عمل معالجة نقاط ضعف الأداء"]
+      },
+      policies: {
+        title: "إعداد السياسات والإجراءات المالية",
+        badge: "التحليل والاستشارات",
+        desc: "تطوير أدلة وسياسات محاسبية ومالية مكتوبة ومفصلة تتناسب مع نشاطك لضمان توحيد آلية العمل وحماية أصول المنشأة.",
+        features: ["دليل سياسات وإجراءات محاسبية متكامل", "تنظيم دورات الصرف والتحصيل والعهَد", "رفع الكفاءة التشغيلية للأفراد"]
+      },
+      restructuring: {
+        title: "إعادة الهيكلة المالية والتشغيلية",
+        badge: "التحليل والاستشارات",
+        desc: "دراسة ومعالجة الاختلالات المالية وإعادة ترتيب الديون والتكاليف والهيكل التشغيلي لتحويل المنشأة نحو الربحية والاستقرار.",
+        features: ["معالجة التعثر المالي وإعادة جدولة الديون", "ترشيد التكاليف غير الضرورية", "تطوير النموذج التشغيلي"]
+      },
+      feasibility: {
+        title: "دراسات الجدوى المالية والاقتصادية",
+        badge: "التحليل والاستشارات",
+        desc: "إعداد دراسات جدوى شاملة للمشاريع الجديدة أو التوسعات الاستثمارية تتضمن التحليل السوقي والمالي وتقييم المخاطر لضمان نجاح الاستثمار.",
+        features: ["تقدير التكاليف الإستثمارية والتشغيلية", "حساب فترة الاسترداد ومعدل العائد الداخلي (IRR)", "تحليل الحساسية وسيناريوهات المخاطر"]
+      }
+    };
+
+    let currentSelectedService = "عام";
+
+    function openServiceModal(serviceKey) {
+      const data = servicesData[serviceKey];
+      if (!data) return;
+
+      currentSelectedService = data.title;
+      document.getElementById('mBadge').innerText = data.badge;
+      document.getElementById('mTitle').innerText = data.title;
+      
+      let htmlContent = `<p style="margin-bottom:1.5rem;">${data.desc}</p>`;
+      if (data.features && data.features.length > 0) {
+        htmlContent += `<h4 style="font-size:1.05rem; color:var(--color-primary); margin-bottom:0.8rem;">أبرز مميزات الخدمة:</h4><div class="modal-features-list">`;
+        data.features.forEach(feat => {
+          htmlContent += `
+            <div class="modal-feature-item">
+              <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>${feat}</span>
+            </div>`;
+        });
+        htmlContent += `</div>`;
+      }
+
+      document.getElementById('mBody').innerHTML = htmlContent;
+      document.getElementById('serviceModal').classList.add('active');
+    }
+
+    function closeServiceModal() {
+      document.getElementById('serviceModal').classList.remove('active');
+    }
+
+    function openConsultationModal() {
+      currentSelectedService = "عام";
+      document.getElementById('mBadge').innerText = "طلب استشارة";
+      document.getElementById('mTitle').innerText = "اطلب استشارتك المالية الآن";
+      document.getElementById('mBody').innerHTML = `
+        <p style="margin-bottom:1.5rem;">يسعدنا تقديم استشارة تخصصية لمنشأتك. يرجى ملء النموذج أدناه أو التواصل المباشر عبر واتساب.</p>
+        <p style="font-size:0.95rem; color:var(--color-gold); font-weight:500;">واتساب التواصل المباشر: <a href="https://wa.me/966595030043" target="_blank" style="text-decoration:underline; color:#25D366; font-weight:700;">0595030043</a></p>
+      `;
+      document.getElementById('serviceModal').classList.add('active');
+    }
+
+    function requestServiceFromModal() {
+      closeServiceModal();
+      const contactSection = document.getElementById('contact');
+      contactSection.scrollIntoView({ behavior: 'smooth' });
+
+      // Pre-select in form dropdown if available
+      const selectElem = document.getElementById('serviceSelect');
+      if (selectElem) {
+        for (let i = 0; i < selectElem.options.length; i++) {
+          if (selectElem.options[i].text.includes(currentSelectedService) || selectElem.options[i].value === currentSelectedService) {
+            selectElem.selectedIndex = i;
+            break;
+          }
+        }
+      }
+    }
+
+    // Form Submission & WhatsApp Handler
+    function handleFormSubmit(event) {
+      event.preventDefault();
+      
+      const fullName = document.getElementById('fullName').value.trim();
+      const companyName = document.getElementById('companyName').value.trim();
+      const phone = document.getElementById('phone').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const serviceSelect = document.getElementById('serviceSelect');
+      const serviceText = serviceSelect.options[serviceSelect.selectedIndex] ? serviceSelect.options[serviceSelect.selectedIndex].text : serviceSelect.value;
+      const message = document.getElementById('message').value.trim();
+
+      if (!fullName || !companyName || !phone) {
+        showToast("يرجى تعبئة جميع الحقول المطلوبة (الاسم، المنشأة، الهاتف).");
+        return;
+      }
+
+      const whatsappNumber = "966595030043";
+
+      let text = `مرحبًا، أود طلب استشارة محاسبية/مالية من شركة ثقة:\n\n`;
+      text += `👤 *الاسم:* ${fullName}\n`;
+      text += `🏢 *اسم الشركة / المنشأة:* ${companyName}\n`;
+      text += `📱 *رقم الهاتف:* ${phone}\n`;
+      if (email) {
+        text += `📧 *البريد الإلكتروني:* ${email}\n`;
+      }
+      text += `💼 *نوع الخدمة المطلوبة:* ${serviceText}\n`;
+      if (message) {
+        text += `📝 *تفاصيل الرسالة:* ${message}\n`;
+      }
+
+      const waUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(text)}`;
+      
+      showToast(`شكرًا لك ${fullName}، جاري تحويلك إلى واتساب لإرسال الطلب...`);
+
+      setTimeout(() => {
+        window.open(waUrl, '_blank');
+      }, 700);
+
+      document.getElementById('contactForm').reset();
+    }
+
+    function showToast(message) {
+      const toast = document.getElementById('toast');
+      const toastMsg = document.getElementById('toastMsg');
+      toastMsg.innerText = message;
+      toast.classList.add('show');
+
+      setTimeout(() => {
+        toast.classList.remove('show');
+      }, 5000);
+    }
+  </script>
+</body>
+</html>
